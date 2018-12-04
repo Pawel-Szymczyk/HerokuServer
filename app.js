@@ -13,7 +13,7 @@ if (defaultPort == null || defaultPort == "") {
 //     host: 'localhost'
 // });
 
-var server = new Hapi.Server(+process.env.PORT, '0.0.0.0');
+const server = new Hapi.Server(~~process.env.PORT || 8000, 'localhost');
 
 server.route({
     method: 'GET',
