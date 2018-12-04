@@ -3,17 +3,17 @@
 const Hapi = require('hapi');
 
 
-let defaultPort = process.env.PORT;
+let defaultPort = ~~process.env.PORT;
 if (defaultPort == null || defaultPort == "") {
     defaultPort = 8000;
 }
 
-// const server = Hapi.server({
-//     port: defaultPort,
-//     host: 'localhost'
-// });
+const server = Hapi.server({
+    port: defaultPort,
+    host: 'localhost'
+});
 
-const server = new Hapi.Server(~~process.env.PORT || 8000, 'localhost');
+//const server = new Hapi.Server(~~process.env.PORT || 8000, 'localhost');
 
 server.route({
     method: 'GET',
