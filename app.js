@@ -8,10 +8,12 @@ if (defaultPort == null || defaultPort == "") {
     defaultPort = 8000;
 }
 
-const server = Hapi.server({
-    port: defaultPort,
-    host: 'localhost'
-});
+// const server = Hapi.server({
+//     port: defaultPort,
+//     host: 'localhost'
+// });
+
+var server = new Hapi.Server(+process.env.PORT, '0.0.0.0');
 
 server.route({
     method: 'GET',
